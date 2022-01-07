@@ -1,5 +1,5 @@
 {
-  "name": "react template",
+  "name": "-enter-project-name-",
   "version": "1.0.0",
   "description": "Enter description",
   "main": "index.js",
@@ -15,11 +15,18 @@
     "@babel/preset-env": "^7.11.5",
     "@babel/preset-react": "^7.10.4",
     "babel": "^6.23.0",
+    "babel-jest": "^27.0.6",
     "babel-loader": "^8.1.0",
+    "buffer": "^6.0.3",
     "css-loader": "^6.1.0",
-    "eslint": "^7.22.0",
-    "eslint-config-google": "^0.14.0",
-    "eslint-plugin-react": "^7.22.0",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-jest": "^24.4.0",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-react": "^7.28.0",
+    "eslint-plugin-react-hooks": "^4.2.0",
     "html-webpack-plugin": "^5.3.2",
     "jest": "^27.0.6",
     "prop-types": "^15.7.2",
@@ -27,15 +34,19 @@
     "sass": "^1.32.11",
     "sass-loader": "^12.1.0",
     "scss": "^0.2.4",
+    "stream-browserify": "^3.0.0",
     "style-loader": "^3.1.0",
-    "webpack": "^5.45.1",
-    "webpack-cli": "^4.7.2",
-    "webpack-dev-server": "^3.11.2"
+    "webpack": "^5.38.1",
+    "webpack-cli": "^4.9.1",
+    "webpack-dev-server": "^4.3.1"
   },
   "scripts": {
-    "start": "webpack serve",
+    "start": "webpack-dev-server",
     "build": "NODE_ENV='production' webpack",
-    "test": "jest"
+    "test": "jest --env=jsdom --watchAll"
+  },
+  "jest": {
+    "testEnvironment": "jsdom"
   },
   "babel": {
     "presets": [
@@ -45,15 +56,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/MisterPea/*Enter URL*"
+    "url": "git+https://github.com/*Enter Username*/*Enter URL*"
   },
   "keywords": [
     "React"
   ],
-  "author": "Perry Angelora",
+  "author": "*Enter Name*",
   "license": "GPL-3.0-or-later",
   "bugs": {
-    "url": "https://github.com/MisterPea/*Enter URL/issues"
+    "url": "https://github.com/*Enter Username*/*Enter URL/issues"
   },
-  "homepage": "https://github.com/MisterPea/*Enter URL"
+  "homepage": "https://github.com/*Enter Username*/*Enter URL"
 }
