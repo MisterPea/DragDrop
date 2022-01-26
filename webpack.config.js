@@ -41,6 +41,6 @@ module.exports = {
   mode: process.env.NODE_ENV === 'production' ? 'production' : 'development',
   devServer: {
     historyApiFallback: true,
-    host: 'Enter.Your.Local.IP',
+    host: '192.168.1.152',
   },
 };
