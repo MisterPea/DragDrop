@@ -47,3 +47,9 @@ Within the `options` prop, you can add some customizations.
 |`customClass`|class name as string| Instead of using the default `drag-active` on drag over events, you can specify a custom class name.
 |`fileCallback`|function|A function which the file(s) are passed to upon drop. The information is a `DataTransfer.files` object. |
 |`appendToFileCallback`|Array with at least one of the following keywords: _'className'_, _'id'_, _'data'_.|To locate where the file(s) have been dropped, you can include the `appendToFileCallback` key with appropriate flags. On file(s) drop, this will append the `fileCallback` with said flags corresponding to drop target. The shape of responses is as follows: `id: String`,`className: [String]`,`data: Object`, and `files: FileList`.
+
+---
+## Notes:
+* Elements whose class you want appended (upon drag over) must already have a class name tied to them. This component will not add non-existent class fields.
+
+* If you specified `className`, `id`, or `data-` attribute(s) for `appendToFileCallback` and that attribute doesn't exist within the DOM, the callback will return `null` instead.
