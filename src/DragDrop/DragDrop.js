@@ -2,6 +2,15 @@
 import * as React from 'react';
 import { useRef, useEffect } from 'react';
 
+/**
+ * Wrapper to allow file drag and drop for children
+ * @param {Object} options Object defining the component options.
+ * @param {'*'|string[classNames]|'none'} options.watchDrag
+ * @param {string} options.customClass
+ * @param {function} options.fileCallback
+ * @param {string['id'|'className'|'data']} options.appendToFileCallback
+ * @returns {JSX}
+ */
 export default function DragDrop({ children, options = {} }) {
   const activeClassDrag = useRef(undefined);
   const activeIdDragElement = useRef(undefined);
