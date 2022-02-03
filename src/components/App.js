@@ -1,6 +1,6 @@
 import React from 'react';
 import DragDrop from '../DragDrop/DragDrop';
-import AppTest from '../../tests/AppTest';
+import { AppTest } from '../../tests/AppTest';
 
 export default function App() {
   const testArray = [];
