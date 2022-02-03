@@ -62,14 +62,16 @@ export default function DragDrop({ children, options = {} }) {
   function handleAppendCallbackPayload(e) {
     const tempPayload = {};
     const toAppend = options.appendToFileCallback;
-    if (toAppend.includes('id')) {
-      tempPayload.id = e.target.id;
+    if (toAppend?.includes('id')) {
+      tempPayload.id = e.target.id || null;
     }
-    if (toAppend.includes('className')) {
-      tempPayload.className = e.target.className.replace(dragActive, '').split(' ').filter(Boolean);
+    if (toAppend?.includes('className')) {
+      const classAppend = e.target.className.replace(dragActive, '').split(' ').filter(Boolean);
+      tempPayload.className = classAppend.length === 0 ? null : classAppend;
     }
-    if (toAppend.includes('data')) {
-      tempPayload.data = { ...e.target.dataset };
+    if (toAppend?.includes('data')) {
+      const dataAppend = { ...e.target.dataset };
+      tempPayload.data = Object.keys(dataAppend).length === 0 ? null : dataAppend;
     }
     return tempPayload;
   }
@@ -80,10 +82,8 @@ export default function DragDrop({ children, options = {} }) {
   function handleDropEvent(e) {
     e.stopPropagation();
     e.preventDefault();
-    let callbackPayload;
-    if (options.appendToFileCallback) {
-      callbackPayload = handleAppendCallbackPayload(e);
-    }
+
+    const callbackPayload = handleAppendCallbackPayload(e);
 
     callbackPayload.files = e.dataTransfer.files;
     if (fileCallback) { fileCallback(callbackPayload); }
