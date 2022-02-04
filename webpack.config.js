@@ -1,46 +1,46 @@
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   resolve: {
+    alias: {
+      react: path.resolve(__dirname, './node_modules/react'),
+      'react-dom': path.resolve(__dirname, './node_modules/react-dom'),
+    },
     fallback: {
       stream: require.resolve('stream-browserify'),
       buffer: require.resolve('buffer'),
     },
   },
-  entry: `${path.resolve(__dirname)}/src/index.js`,
+  entry: './src/DragDrop/DragDrop.js',
   output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: 'index.bundle.js',
+    path: path.resolve('lib'),
+    filename: 'DragDrop.js',
+    libraryTarget: 'commonjs2',
+  },
+  externals: {
+    // Don't bundle
+    react: {
+      commonjs: 'react',
+      commonjs2: 'react',
+      amd: 'React',
+      root: 'React',
+    },
+    'react-dom': {
+      commonjs: 'react-dom',
+      commonjs2: 'react-dom',
+      amd: 'ReactDOM',
+      root: 'ReactDOM',
+    },
   },
   module: {
     rules: [
       {
-        test: /\.s[ac]ss$/i,
-        use: ['style-loader', 'css-loader', 'sass-loader'],
-      },
-      {
         test: /\.(js)$/,
+        exclude: /(node_modules)/,
         use: 'babel-loader',
-      },
-      {
-        test: /\.(woff(2)?|ttf|eot|svg|png)(\?v=\d+\.\d+\.\d+)?$/,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: '[name].[ext]',
-              outputPath: 'fonts/',
-            },
-          },
-        ],
       },
     ],
   },
-  plugins: [new HtmlWebpackPlugin({ template: './src/index.html' })],
+
   mode: process.env.NODE_ENV === 'production' ? 'production' : 'development',
-  devServer: {
-    historyApiFallback: true,
-    host: '192.168.1.152',
-  },
 };
