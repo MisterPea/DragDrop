@@ -2,7 +2,6 @@ import * as React from 'react';
 import ReactDOM from 'react-dom';
 import { render, screen, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import 'regenerator-runtime/runtime';
 import DragDrop from '../src/DragDrop/DragDrop';
 import {
   AppTest,
