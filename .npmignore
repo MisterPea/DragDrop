@@ -1,0 +1,10 @@
+.eslintrc.json
+.gitignore
+.npmignore
+.git
+node_modules/
+tests/
+src/
+.vscode/
+.circleci/
+
