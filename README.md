@@ -1,4 +1,4 @@
-# React Drag and Drop file uploader
+# React Drag and Drop file uploader • [![CircleCi Status](https://circleci.com/gh/MisterPea/DragDrop.svg?style=svg)](https://circleci.com/gh/MisterPea/DragDrop)
 
 ### A minimal React Component wrapper to simplify the drag and drop of file(s) onto DOM elements.
 
