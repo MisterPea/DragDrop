@@ -1,6 +1,6 @@
 {
   "name": "@misterpea/dragdrop",
-  "version": "0.1.0",
+  "version": "0.1.01", 
   "author": "Perry Angelora",
   "description": "A minimal React Component wrapper to simplify the drag and drop of file(s) onto DOM elements.",
   "main": "lib/DragDrop",
