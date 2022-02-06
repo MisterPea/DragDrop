@@ -26,8 +26,8 @@ jobs:
           name: Run tests
           command: npm test
       - run:
-          name: Run build
-          command: npm run build
+          name: Run prepack/build
+          command: npm prepack
       - save_cache:
           paths:
             - node_modules
