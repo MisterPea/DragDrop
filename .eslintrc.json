@@ -8,8 +8,10 @@
     },
     "extends": [
         "plugin:react/recommended",
-        "airbnb"
+        "airbnb",
+        "plugin:yaml/recommended"
     ],
+    
     "globals": {
         "Atomics": "readonly",
         "SharedArrayBuffer": "readonly"
@@ -24,7 +26,8 @@
     },
     "plugins": [
         "react",
-        "jest"
+        "jest",
+        "yaml"
     ],
     "rules": {
         "react/jsx-filename-extension": [
