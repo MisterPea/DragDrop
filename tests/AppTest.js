@@ -54,7 +54,7 @@ export function AppTestNoClass() {
         <li data-foo="listWhich" data-bar="listItemSeven" id="listItemSeven">List Item Seven</li>
         <li data-foo="listWhich" data-bar="listItemEight" id="listItemEight">List Item Eight</li>
         <li data-testid="first" data-foo="listOne" data-bar="listItemNine" id="listItemNine">List Item Nine</li>
-        <li data-foo="listOne" data-bar="listItemTen" id="listItemTen"> List Item Ten</li >
+        <li data-foo="listOne" data-bar="listItemTen" id="listItemTen"> List Item Ten</li>
       </ul>
     </div>
   );
